@@ -42,15 +42,18 @@ from plotly.subplots import make_subplots
 
 df_raw = pd.read_csv('https://goz39a.s3.eu-central-1.amazonaws.com/hepatitis_csv.csv')
 
-# fast preprocessing, dropping na to avoid errors when plotting
+# ¡¡¡ --- !!! # ---> data preprocessing
+
+#  dropping na to avoid errors when plotting
 
 df = df_raw.dropna(axis=0,how = "any")
 df.columns
 df.shape
-df
+df_filter1 = df[(df["age"] > 50)&(df["age"] < 70)]
 
-# basic line plot
+# ¡¡¡ --- !!! # ---> plotting 
 
+# plot 1
 
 fig1 = plt.plot(np.array(df["age"])[0:50], c = "red", label = "series red")
 plt.plot(np.array(df["age"])[50:], c = "blue", label = "series blue")
@@ -65,7 +68,7 @@ plt.grid()
 
 plt.show()
 
-# scatter plot
+# plot 2
 
 
 plt.scatter(np.array(df["age"]),np.array(df["bilirubin"]), c = np.array(df["protime"]), s = 100, marker='+')
@@ -77,4 +80,17 @@ plt.xticks(np.linspace(25,65,8), rotation = 90)
 plt.colorbar(label = "ColorbaR")
 plt.grid()
 plt.show()
+
+
+
+
+
+
+# ¡¡¡ --- !!! # ---> export
+
+
+fig1.savefig("fig1.png")
+
+
+
 
