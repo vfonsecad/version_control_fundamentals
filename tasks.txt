@@ -1,0 +1,15 @@
+THESIS.tex
+	1. Modify abstract section
+	2. Modify Conclusions section
+	3. Add a new "acknowledgements" section
+
+VISUALIZATION.py
+	1. Plot filtered data instead of full data in both plots in PLOTTING
+	2. Change filtering criteria in DATA PREPROCESSING
+	3. Modify file name and format in EXPORT
+
+DECISION_TREES.R
+	1. Change training and test datasets partitioning in PARTITION DATASET
+	2. Change formula for models in FORMULA MODELS
+	3. Change number of cross-validation groups in CART MODEL TRAINING
+	4. Change number of trees in BAGGED CART
